@@ -50,4 +50,4 @@ class Solution:
 
 # Time & Space Complexity
 
-While both of these solutions runs at a much faster time complexity of O(n), it is important to note that they do take O(n) extra memory because of the set that is needed for this algorithm. So while the brute force solution uses O(1) memory, it costs quadratic time so this is a worthwile tradeoff.
+While both of these solutions runs at a much faster time complexity of O(n), it is important to note that they do take O(n) extra memory because of the set that is needed for this algorithm. So while the brute force solution only uses O(1) memory, it costs quadratic time making this is a worthwhile tradeoff.
