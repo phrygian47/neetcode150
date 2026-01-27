@@ -51,7 +51,7 @@ Output: False
 
 # My Solution
 
-Sudoku problems are always a bit tricky for me because you have to not only think about an array as a 2D object, but include the sub-boxes. The key to solving this problem lies in how to map an entry to a sub box. This can be done using floor division `//`. You can take the element at `board[i//3][j//3]` as there are 3 x 3 sub boxes. For numbers `0-2` `i` will map to `0`, `3-5` will map to `1`, and `6-8` will map to `2`. This allows us to check every corresponding sub box accurately. The only thing left to do is to scan each row, column, and square for each `board[i][j]`, and if it is found in any of the three return `False`, otherwise add the value to each of the three. If we ever leave our loop, then we know that no duplicates have been found and can return `True`.
+Sudoku problems are always a bit tricky for me because you have to not only think about an array as a 2D object, but include the sub-boxes. The key to solving this problem lies in how to map an entry to a sub box. This can be done using floor division `//`. You can map a cell `(i, j)` to its 3 × 3 sub-box using the key `(i // 3, j // 3)`. For rows `0–2`, `i // 3 = 0`. For `3–5`, it’s `1`. For `6–8`, it’s `2` (same idea for columns). We use that key to store and check digits in the squares dictionary. The only thing left to do is to scan each row, column, and square for each `board[i][j]`, and if it is found in any of the three return `False`, otherwise add the value to each of the three. If we ever leave our loop, then we know that no duplicates have been found and can return `True`.
 
 ## Code
 
@@ -79,4 +79,4 @@ class Solution:
 
 ## Time & Space Complexity
 
-This algorithm runs in O(n<sup><small>2</small></sup>)
+This algorithm runs in O(n<sup><small>2</small></sup>) and O(n<sup><small>2</small></sup>) space where n is length of a side of the Sudoku board.
