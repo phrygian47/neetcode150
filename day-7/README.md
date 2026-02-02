@@ -31,7 +31,7 @@ Constraints
 
 # My solution
 
-We could brute force this by checking each value and finding the length of each sequence starting with that value, however this leads to a lot of repetitive work and slow runtimes. A set helps us in this situation because of its O(1) lookup time, and we can eliminate a lot of repetition by finding a start of a sequence rather than checking each value. To find the start of a sequence there must be no values that are exactly 1 less in the set. So for each `n` in `numset`, we can check to see if `n - 1` exists in the numset, if it doesn't then we know we found the start of a sequence and can continue with our algorithm. We initialize a value to track the current sequence length `curr = 1`. We start at 1 because that is the smallest a sequence can be. Then while `n + 1` exists in `numset`, we can increment our `curr` value by 1 and increment `n` by one as well. Once `n + 1` is not found, we found the end of our sequence and find the `max(curr, longest)`.
+We could brute force this by checking each value and finding the length of each sequence starting with that value, however this leads to a lot of repetitive work and slow runtimes. You could also sort the array first and simply iterate through the array until a consecutive value isn't found. However both of these solutions take up more time complexity than the problem allows. Instead, a set helps us in this situation because of its O(1) lookup time, and we can eliminate a lot of repetition by finding a start of a sequence rather than checking each value. To find the start of a sequence there must be no values that are exactly 1 less in the set. So for each `n` in `numset`, we can check to see if `n - 1` exists in the numset, if it doesn't then we know we found the start of a sequence and can continue with our algorithm. We initialize a value to track the current sequence length `curr = 1`. We start at 1 because that is the smallest a sequence can be. Then while `n + 1` exists in `numset`, we can increment our `curr` value by 1 and increment `n` by one as well. Once `n + 1` is not found, we found the end of our sequence and find the `max(curr, longest)`.
 
 # Code
 
@@ -50,3 +50,7 @@ class Solution:
                 longest = max(curr, longest)
         return longest
 ```
+
+# Time & Space Complexity
+
+This algorithm runs in O(n) time and takes O(n) extra space where n is the length of the Set `numset`
