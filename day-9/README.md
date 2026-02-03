@@ -41,3 +41,7 @@ class Solution:
             else:
                 return [l + 1, r + 1]
 ```
+
+## Time & Space Complexity
+
+This algorithm runs in O(n) time and takes O(1) extra space.
